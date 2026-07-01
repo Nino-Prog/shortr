@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shortr — Fast URL Shortener</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="hero">
+    <h1>Shortr</h1>
+    <p class="tagline">High-performance link shortening with analytics.</p>
+
+    <div id="auth-section">
+      <div class="card">
+        <h2 id="auth-title">Sign in</h2>
+        <input id="email" type="email" placeholder="Email" autocomplete="email">
+        <input id="password" type="password" placeholder="Password" autocomplete="current-password">
+        <button id="auth-btn" onclick="login()">Sign in</button>
+        <p class="switch">No account? <a href="#" onclick="toggleAuth()">Register</a></p>
+        <p id="auth-error" class="error"></p>
+      </div>
+    </div>
+
+    <div id="app-section" style="display:none">
+      <div class="card">
+        <input id="url-input" type="url" placeholder="https://example.com/your-long-url">
+        <input id="code-input" type="text" placeholder="Custom code (optional)">
+        <button onclick="shorten()">Shorten</button>
+        <p id="result"></p>
+      </div>
+      <div class="actions">
+        <a href="/dashboard">View my links &rarr;</a>
+        <a href="#" onclick="logout()">Sign out</a>
+      </div>
+    </div>
+  </div>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

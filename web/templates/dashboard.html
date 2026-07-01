@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shortr — Dashboard</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">Shortr</a>
+    <div class="nav-actions">
+      <a href="/" class="btn-outline">+ New link</a>
+      <a href="#" onclick="logout()" class="btn-outline">Sign out</a>
+    </div>
+  </nav>
+
+  <main>
+    <h2>My Links</h2>
+    <div id="links-list"><p class="loading">Loading…</p></div>
+
+    <div id="analytics-panel" style="display:none">
+      <h3>Analytics: <span id="analytics-code"></span></h3>
+      <div class="stats-row">
+        <div class="stat-box"><span id="total-clicks">—</span><label>Total clicks</label></div>
+        <div class="stat-box"><span id="top-country">—</span><label>Top country</label></div>
+        <div class="stat-box"><span id="top-city">—</span><label>Top city</label></div>
+      </div>
+      <table id="recent-table">
+        <thead><tr><th>Time</th><th>Country</th><th>City</th></tr></thead>
+        <tbody id="recent-body"></tbody>
+      </table>
+      <button onclick="closeAnalytics()">Close</button>
+    </div>
+  </main>
+
+  <script src="/static/js/app.js"></script>
+  <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
